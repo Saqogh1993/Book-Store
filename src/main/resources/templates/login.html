@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login page </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="login-screen">
+    <div class="left-item">
+        <div class="login-panel">
+            <div class="inner-login-panel">
+                <div class="content-panel">
+                    <h3 class="title">Sign In</h3>
+                    <form  th:action="@{/login}" method="post">
+                        <p th:if="*{message}" th:text="*{message}"></p>
+                        <div class="alert alert-dark" role="alert">
+                            <input type="text" name="username" placeholder="username"/>
+                        </div>
+                        <div class="alert alert-dark" role="alert">
+                            <input type="password" name="password" placeholder="Password"/>
+                        </div>
+                        <div><input type="submit" value="Sign In"/></div>
+                    </form>
+                    <a th:href="@{/registration}"><input type="submit" value="Registration"/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
